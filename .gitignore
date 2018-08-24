@@ -1,0 +1,7 @@
+server/apache/__sites-available/
+server/mysql/data/
+server/mysql.old/
+server/dnsmasq/
+!server/dnsmasq/dnsmasq.conf
+sites/
+!sites/index.php
