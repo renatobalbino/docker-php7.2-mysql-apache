@@ -16,10 +16,10 @@ services:
     links:
       - db
     volumes:
-      - /path/to/my/projects/www:/var/www/html
-      - /path/to/my/projects/server/php/ext/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
-      - /path/to/my/projects/server/apache/sites-available:/etc/apache2/sites-available
-      - /path/to/my/projects/server/apache/sites-enabled:/etc/apache2/sites-enabled
+      - /home/renato/Workspace/sites:/var/www/html
+      - /home/renato/Workspace/server/php/ext/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - /home/renato/Workspace/server/apache/sites-available:/etc/apache2/sites-available
+      - /home/renato/Workspace/server/apache/sites-enabled:/etc/apache2/sites-enabled
     restart: always
 
   composer:
@@ -34,12 +34,12 @@ services:
     image: mysql:5.7
     container_name: projetos.db
     environment:
-      - MYSQL_ROOT_PASSWORD=mypassword
-      - MYSQL_USER=myuser
-      - MYSQL_PASSWORD=myuser
+      - MYSQL_ROOT_PASSWORD=projetos212223
+      - MYSQL_USER=renato
+      - MYSQL_PASSWORD=renato
     ports:
       - '3306:3306'
     volumes:
-      - /path/to/my/projects/server/mysql/config:/etc/mysql
-      - /path/to/my/projects/server/mysql/data:/var/lib/mysql
+      - /home/renato/Workspace/server/mysql/config:/etc/mysql
+      - /home/renato/Workspace/server/mysql/data:/var/lib/mysql
     restart: always
